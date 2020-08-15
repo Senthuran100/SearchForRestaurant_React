@@ -40,3 +40,20 @@
 .carousel-item img{
   height: 300px;
 }
+
+
+
+.product {
+  display: flex;
+}
+
+.product--image {
+  order: 1;
+}
+
+.product--detail {
+  order: 2;
+  @media only screen and (min-width: 600px) {
+     order: 0;
+  }
+}

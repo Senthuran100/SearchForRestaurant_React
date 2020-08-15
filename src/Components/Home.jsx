@@ -85,8 +85,6 @@ export default class Home extends Component {
                         />
                     </Carousel.Item>
                 </Carousel>
-                <h1>Latitute  is  {this.state.Latitude} </h1>
-                <h1>Longitude is  {this.state.Longitude} </h1>
                 <NearRestaurant restaurants={this.state.restaurants} isLoaded={this.state.isLoaded}/>
                 {/* <ul>
                     {this.state.restaurants.map((restaurant) => (
