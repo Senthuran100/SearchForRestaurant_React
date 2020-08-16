@@ -17,7 +17,9 @@ export default class Home extends Component {
             Latitude: 0,
             Longitude: 0,
             restaurants: [],
-            isLoaded: false
+            isLoaded: false,
+            Cuisines: [],
+            Categories: []
         }
     }
 
@@ -35,6 +37,8 @@ export default class Home extends Component {
                     Longitude: position.coords.longitude
                 })
                 this.sendGetRestaurant();
+                this.getCuisines();
+                this.getCategories();
             },
             function (error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
@@ -46,7 +50,6 @@ export default class Home extends Component {
             }
         );
     }
-
 
     sendGetRestaurant = async () => {
         try {
@@ -64,6 +67,28 @@ export default class Home extends Component {
         }
     }
 
+    getCuisines = () => {
+        axios.get('https://developers.zomato.com/api/v2.1/cuisines?lat=' + this.state.Latitude + '&lon=' + this.state.Longitude, {
+            headers: { "user-key": ACCESSKEY }
+        }).then((response) => {
+            this.setState({
+                Cuisines: response.data.cuisines
+            })
+            console.log(this.state.Cuisines);
+        })
+    }
+
+    getCategories=()=>{
+        axios.get('https://developers.zomato.com/api/v2.1/categories',{
+            headers: { "user-key": ACCESSKEY }
+        }).then((response)=>{
+            this.setState({
+                Categories: response.data.categories
+            })
+        })
+        console.log(this.state.categories);
+    }
+
     render() {
         return (
             <div>
@@ -78,7 +103,7 @@ export default class Home extends Component {
                                 <option>4</option>
                                 <option>5</option>
                             </Form.Control>
-                                <FormControl id="inlineFormInputGroupUsername2" placeholder="Search for Restaurants or Cuisines" />
+                            <FormControl id="inlineFormInputGroupUsername2" placeholder="Search for Restaurants or Cuisines" />
                             <Button type="submit" className="mb-2">
                                 Submit
                         </Button>
@@ -86,6 +111,7 @@ export default class Home extends Component {
                     </Form>
                 </div>
                 <br />
+
                 <NearRestaurant restaurants={this.state.restaurants} isLoaded={this.state.isLoaded} />
             </div>
         )
