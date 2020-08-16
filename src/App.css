@@ -57,3 +57,10 @@
      order: 0;
   }
 }
+
+.contact-background-image {
+  background-image: url("https://img.food.com/img/upload/editorial/PACKAGE-COMFORT-FOOD/2016-12-23%20-%20Lasagna%20all%20day/four-lasagnes-16.jpg");
+  padding: 50px 0 50px 0;
+  height: 400px;
+  background-size: 100%
+}

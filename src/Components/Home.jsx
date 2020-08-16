@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
-import Carousel from 'react-bootstrap/Carousel'
 import axios from 'axios';
 import { ACCESSKEY } from './Constants';
 import NearRestaurant from './NearRestaurant';
+import '../App.css';
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
+
+
 
 export default class Home extends Component {
 
@@ -51,7 +56,7 @@ export default class Home extends Component {
             console.log(resp.data);
             this.setState({
                 restaurants: resp.data.restaurants,
-                isLoaded:true
+                isLoaded: true
             })
             console.log(this.state.restaurants);
         } catch (err) {
@@ -62,36 +67,26 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://135525-391882-2-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/01/food-restaurant.jpg"
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://static.wixstatic.com/media/8903c6_bb5088b5f1ab48fbae2533fc03604779~mv2_d_1600_1600_s_2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01/8903c6_bb5088b5f1ab48fbae2533fc03604779~mv2_d_1600_1600_s_2.webp"
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://i.pinimg.com/736x/e6/7d/af/e67daf68a6e8f6d4a9283cb7d64b098c.jpg"
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                </Carousel>
-                <NearRestaurant restaurants={this.state.restaurants} isLoaded={this.state.isLoaded}/>
-                {/* <ul>
-                    {this.state.restaurants.map((restaurant) => (
-                        <li key={restaurant.restaurant.id}>{restaurant.restaurant.name}</li>
-                    ))}
-                </ul> */}
+                <div class="contact-background-image">
 
+                    <Form inline  >
+                        <Form.Row className="align-items-center">
+                            <Form.Control as="select" size="sm" custom>
+                                <option>Location</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </Form.Control>
+                                <FormControl id="inlineFormInputGroupUsername2" placeholder="Search for Restaurants or Cuisines" />
+                            <Button type="submit" className="mb-2">
+                                Submit
+                        </Button>
+                        </Form.Row>
+                    </Form>
+                </div>
+                <br />
+                <NearRestaurant restaurants={this.state.restaurants} isLoaded={this.state.isLoaded} />
             </div>
         )
     }
