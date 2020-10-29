@@ -1,3 +1,4 @@
+import { Space, Spin } from 'antd';
 import React, { Component } from 'react'
 import Result from './Result'
 
@@ -25,9 +26,9 @@ export default class NearRestaurant extends Component {
         }
         else {
             return (
-                <div className="container">
-                    <p>Please wait...</p>
-                </div>
+                <Space size="middle">
+                    <Spin size="large" />
+                </Space>
             );
         }
     }

@@ -6,6 +6,7 @@ import '../App.css';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import Search from 'antd/lib/input/Search';
 
 
 
@@ -94,7 +95,7 @@ export default class Home extends Component {
             <div>
                 <div class="contact-background-image">
 
-                    <Form inline  >
+                    {/* <Form inline  >
                         <Form.Row className="align-items-center">
                             <Form.Control as="select" size="sm" custom>
                                 <option>Location</option>
@@ -108,7 +109,9 @@ export default class Home extends Component {
                                 Submit
                         </Button>
                         </Form.Row>
-                    </Form>
+                    </Form> */}
+                        <Search placeholder="input search text" enterButton="Search" size="large" style={{ width: 500 }}/>
+
                 </div>
                 <br />
 

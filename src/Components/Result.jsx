@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Image } from 'antd'
 import { Figure, Row, Container, Col, Badge } from 'react-bootstrap'
 import { MDBIcon } from "mdbreact";
 
@@ -11,13 +11,12 @@ export default class Result extends Component {
                     <Container>
                         <Row>
                             <Col>
-                                <Figure>
-                                    <Figure.Image
+                                <Image
                                         width={171}
                                         height={200}
-                                        src={this.props.thumbnail}
-                                    />
-                                </Figure>
+                                        src={this.props.thumbnail}/>
+                                    
+                                
                             </Col>
                             <Col>
                                 <h2><MDBIcon icon="utensils" /> &nbsp;  {this.props.title}</h2>
