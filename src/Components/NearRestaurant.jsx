@@ -5,9 +5,10 @@ import Result from './Result'
 export default class NearRestaurant extends Component {
 
     render() {
+        
         let restaurants = this.props.restaurants;
         let isLoaded = this.props.isLoaded;
-        if (isLoaded) {
+        if (!isLoaded) {
             const resultComponents = restaurants.map((item) => (
                 <Result
                     key={item.restaurant.id}

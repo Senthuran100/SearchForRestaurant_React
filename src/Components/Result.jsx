@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Image } from 'antd'
-import { Figure, Row, Container, Col, Badge } from 'react-bootstrap'
+import {  Row, Container, Col, Badge } from 'react-bootstrap'
 import { MDBIcon } from "mdbreact";
 
 export default class Result extends Component {

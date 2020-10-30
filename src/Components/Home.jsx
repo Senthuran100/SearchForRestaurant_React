@@ -3,22 +3,16 @@ import axios from 'axios';
 import { ACCESSKEY } from './Constants';
 import NearRestaurant from './NearRestaurant';
 import '../App.css';
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 import Search from 'antd/lib/input/Search';
+import { connect } from 'react-redux'   
+import { GET_RESTAURANT } from '../Redux/Actions/action'
 
-
-
-export default class Home extends Component {
+class Home extends Component {
 
     constructor(props) {
         super(props);
+        
         this.state = {
-            Latitude: 0,
-            Longitude: 0,
-            restaurants: [],
-            isLoaded: false,
             Cuisines: [],
             Categories: []
         }
@@ -33,13 +27,9 @@ export default class Home extends Component {
             (position) => {
                 console.log("Latitude is :", position.coords.latitude);
                 console.log("Longitude is :", position.coords.longitude);
-                this.setState({
-                    Latitude: position.coords.latitude,
-                    Longitude: position.coords.longitude
-                })
-                this.sendGetRestaurant();
-                this.getCuisines();
-                this.getCategories();
+            
+                const data = {Latitude:position.coords.latitude,Longitude:position.coords.longitude}
+                this.props.getRestaurant(data)
             },
             function (error) {
                 console.error("Error Code = " + error.code + " - " + error.message);
@@ -50,22 +40,6 @@ export default class Home extends Component {
                 maximumAge: 10000
             }
         );
-    }
-
-    sendGetRestaurant = async () => {
-        try {
-            const resp = await axios.get('https://developers.zomato.com/api/v2.1/search?lat=' + this.state.Latitude + '&lon=' + this.state.Longitude, {
-                headers: { "user-key": ACCESSKEY }
-            });
-            console.log(resp.data);
-            this.setState({
-                restaurants: resp.data.restaurants,
-                isLoaded: true
-            })
-            console.log(this.state.restaurants);
-        } catch (err) {
-            console.error(err);
-        }
     }
 
     getCuisines = () => {
@@ -91,32 +65,31 @@ export default class Home extends Component {
     }
 
     render() {
+        console.log('rest',this.props);
         return (
             <div>
                 <div class="contact-background-image">
-
-                    {/* <Form inline  >
-                        <Form.Row className="align-items-center">
-                            <Form.Control as="select" size="sm" custom>
-                                <option>Location</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </Form.Control>
-                            <FormControl id="inlineFormInputGroupUsername2" placeholder="Search for Restaurants or Cuisines" />
-                            <Button type="submit" className="mb-2">
-                                Submit
-                        </Button>
-                        </Form.Row>
-                    </Form> */}
-                        <Search placeholder="input search text" enterButton="Search" size="large" style={{ width: 500 }}/>
-
+                    <Search placeholder="input search text" enterButton="Search" size="large" style={{ width: 500 }}/>
                 </div>
                 <br />
 
-                <NearRestaurant restaurants={this.state.restaurants} isLoaded={this.state.isLoaded} />
+                <NearRestaurant restaurants={this.props.restaurants} isLoaded={this.props.loading} />
             </div>
         )
     }
 }
+
+const mapStateToProps = state =>{
+    return{
+        loading: state.reducer.loading,
+        restaurants:state.reducer.restaurant
+    }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    getRestaurant: (data) => dispatch({ type: GET_RESTAURANT, payload:data })
+  })
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
