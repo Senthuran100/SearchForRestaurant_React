@@ -13,7 +13,7 @@ export default (state=initialState,{type,payload}) => {
     case SET_LOADING:
         return {
           ...state,
-      loading: true
+          loading: true
         }   
     case RESTAURANT_RES:
          return {
