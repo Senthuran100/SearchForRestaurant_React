@@ -21,7 +21,6 @@ export default (state=initialState,{type,payload}) => {
              restaurant: payload,
              loading:false,
          }
-    
     case GET_RESTAURANT:
         return {
             ...state,

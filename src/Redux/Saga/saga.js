@@ -6,10 +6,7 @@ import {getRestaurant} from '../API/api'
 
 function *getRestaurantDetail({payload}){
     yield put({ type: SET_LOADING })
-    console.log('Hello',payload);
     const restaurant = yield call(getRestaurant,payload)
-    console.log(restaurant);
-    console.log('HIII');
     yield put({type:RESTAURANT_RES,payload:restaurant})
 }
 
