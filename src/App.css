@@ -70,3 +70,8 @@
 .form-inline {
   width: 100%;
 }
+
+.restaurant{
+  display: grid;
+  align-items: stretch;
+}
