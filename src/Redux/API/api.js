@@ -32,6 +32,7 @@ export const getCollection= async(payload) => {
             headers: { "user-key": ACCESSKEY }
         });
         console.log(collection.data);
+        return collection.data
     }
     catch(error){
         return console.error(error)

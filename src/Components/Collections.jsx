@@ -1,10 +1,52 @@
 
+import { Card, Col, Row, Space, Spin } from 'antd';
+import Meta from 'antd/lib/card/Meta';
 import React from 'react';
- 
-function Collections() {
-  return(
-      <h1>Hiiiiii</h1>
-  )
+import { connect } from 'react-redux'
+
+
+function Collections(props) {
+    let rows=[]
+    if (props.collections.collections) {
+         rows = props.collections.collections.reduce(function (rows, key, index) { 
+            return (index % 3 === 0 ? rows.push([key]) 
+              : rows[rows.length-1].push(key)) && rows;
+          }, []);
+        console.log('row',rows)
+    }
+
+
+    return (
+
+        props.collections.collections ?
+            rows.map((row) =>
+            <Row>
+                {row.map(col => (<Col>
+                    <Card
+                        hoverable
+                        style={{ width: 240 }}
+                        cover={<img alt="example" src={col.collection.image_url} />}
+                    >
+                        <Meta title={col.collection.title} description={col.collection.description} />
+                    </Card>
+                </Col>))}
+            </Row>
+            ) :
+            <Space size="middle">
+                <Spin size="large" />
+            </Space>
+
+    )
+
 }
- 
-export default Collections;
+
+
+const mapStateToProps = (state) => {
+    console.log('state..', state.reducer.collections)
+    return {
+        collections: state.reducer.collections
+    };
+}
+
+export default connect(mapStateToProps)(Collections)
+
