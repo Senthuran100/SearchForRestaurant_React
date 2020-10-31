@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/SearchForRestaurant_React/static/css/main.7f3d0500.chunk.css",
-    "main.js": "/SearchForRestaurant_React/static/js/main.a5043d13.chunk.js",
-    "main.js.map": "/SearchForRestaurant_React/static/js/main.a5043d13.chunk.js.map",
+    "main.js": "/SearchForRestaurant_React/static/js/main.6288162b.chunk.js",
+    "main.js.map": "/SearchForRestaurant_React/static/js/main.6288162b.chunk.js.map",
     "runtime-main.js": "/SearchForRestaurant_React/static/js/runtime-main.cba27886.js",
     "runtime-main.js.map": "/SearchForRestaurant_React/static/js/runtime-main.cba27886.js.map",
     "static/css/2.ceb6ed14.chunk.css": "/SearchForRestaurant_React/static/css/2.ceb6ed14.chunk.css",
-    "static/js/2.d472a82c.chunk.js": "/SearchForRestaurant_React/static/js/2.d472a82c.chunk.js",
-    "static/js/2.d472a82c.chunk.js.map": "/SearchForRestaurant_React/static/js/2.d472a82c.chunk.js.map",
+    "static/js/2.f2c70529.chunk.js": "/SearchForRestaurant_React/static/js/2.f2c70529.chunk.js",
+    "static/js/2.f2c70529.chunk.js.map": "/SearchForRestaurant_React/static/js/2.f2c70529.chunk.js.map",
     "index.html": "/SearchForRestaurant_React/index.html",
-    "precache-manifest.3d22ade225e8fd61b6e267c031151836.js": "/SearchForRestaurant_React/precache-manifest.3d22ade225e8fd61b6e267c031151836.js",
+    "precache-manifest.0cf01cbe7e968c7195db4a961fc7310b.js": "/SearchForRestaurant_React/precache-manifest.0cf01cbe7e968c7195db4a961fc7310b.js",
     "service-worker.js": "/SearchForRestaurant_React/service-worker.js",
     "static/css/2.ceb6ed14.chunk.css.map": "/SearchForRestaurant_React/static/css/2.ceb6ed14.chunk.css.map",
     "static/css/main.7f3d0500.chunk.css.map": "/SearchForRestaurant_React/static/css/main.7f3d0500.chunk.css.map",
-    "static/js/2.d472a82c.chunk.js.LICENSE.txt": "/SearchForRestaurant_React/static/js/2.d472a82c.chunk.js.LICENSE.txt",
+    "static/js/2.f2c70529.chunk.js.LICENSE.txt": "/SearchForRestaurant_React/static/js/2.f2c70529.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/SearchForRestaurant_React/static/media/arrow_right.8ef6a08c.svg",
     "static/media/all.min.css": "/SearchForRestaurant_React/static/media/fa-solid-900.ee09ad75.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.cba27886.js",
     "static/css/2.ceb6ed14.chunk.css",
-    "static/js/2.d472a82c.chunk.js",
+    "static/js/2.f2c70529.chunk.js",
     "static/css/main.7f3d0500.chunk.css",
-    "static/js/main.a5043d13.chunk.js"
+    "static/js/main.6288162b.chunk.js"
   ]
 }

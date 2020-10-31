@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3917564b71421f5e6a05690f376059c7",
+    "revision": "1c3f1a01ed6d97675c7e3f148b612915",
     "url": "/SearchForRestaurant_React/index.html"
   },
   {
-    "revision": "21df1aab9e12826ddfd5",
+    "revision": "2c2ad6be5a34d58e968d",
     "url": "/SearchForRestaurant_React/static/css/2.ceb6ed14.chunk.css"
   },
   {
-    "revision": "005d5f76dacbb9cfdf3c",
+    "revision": "4fd9fa4b3cce7175747d",
     "url": "/SearchForRestaurant_React/static/css/main.7f3d0500.chunk.css"
   },
   {
-    "revision": "21df1aab9e12826ddfd5",
-    "url": "/SearchForRestaurant_React/static/js/2.d472a82c.chunk.js"
+    "revision": "2c2ad6be5a34d58e968d",
+    "url": "/SearchForRestaurant_React/static/js/2.f2c70529.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/SearchForRestaurant_React/static/js/2.d472a82c.chunk.js.LICENSE.txt"
+    "url": "/SearchForRestaurant_React/static/js/2.f2c70529.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "005d5f76dacbb9cfdf3c",
-    "url": "/SearchForRestaurant_React/static/js/main.a5043d13.chunk.js"
+    "revision": "4fd9fa4b3cce7175747d",
+    "url": "/SearchForRestaurant_React/static/js/main.6288162b.chunk.js"
   },
   {
     "revision": "f3f1e7b456f914f2675b",
