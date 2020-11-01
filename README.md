@@ -1,5 +1,5 @@
 
-# Food Restaurant Search
+# Restaurant Search
 - Search for the nearby restaurant.
 - Still in the development mode.
 - Made use of the Zomato API - https://developers.zomato.com/
